@@ -1,4 +1,5 @@
 import React from "react";
+import { Input } from "./Input";
 
 const NewProject = () => {
   return (
@@ -8,18 +9,9 @@ const NewProject = () => {
         <li>Save</li>
       </menu>
       <div>
-        <p>
-          <label htmlFor="">Title</label>
-          <input type="text" />
-        </p>
-        <p>
-          <label htmlFor="">Description</label>
-          <textarea name="" id=""></textarea>
-        </p>
-        <p>
-          <label htmlFor="">Due Date</label>
-          <input type="text" />
-        </p>
+        <Input label={"Title"} />
+        <Input label={"Description"} isTextarea/>
+        <Input label={"Due Date"} />
       </div>
     </div>
   );
