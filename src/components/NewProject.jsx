@@ -11,7 +11,7 @@ const NewProject = ({ onAdd }) => {
     const enteredDescription = description.current.value;
     const enteredDuedate = dueDate.current.value;
     onAdd({
-      title: enteredDuedate,
+      title: enteredTitle,
       description: enteredDescription,
       dueDate: enteredDuedate,
     });
