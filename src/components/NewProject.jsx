@@ -8,9 +8,6 @@ const NewProject = ({ onAdd, onCancel }) => {
   const description = useRef();
   const dueDate = useRef();
 
-  function handleCancel() {
-    onCancel();
-  }
   function handleSave() {
     const enteredTitle = title.current.value;
     const enteredDescription = description.current.value;
@@ -46,7 +43,7 @@ const NewProject = ({ onAdd, onCancel }) => {
         <menu className="flex items-center justify-end gap-4 my-4">
           <li>
             <button
-              onClick={handleCancel}
+              onClick={onCancel}
               className="text-stone-800 hover:text-stone-950"
             >
               Cancel
