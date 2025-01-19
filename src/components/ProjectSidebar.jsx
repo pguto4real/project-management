@@ -8,7 +8,7 @@ const ProjectSidebar = () => {
         Your Projects
       </h2>
       <div>
-        <Button label={"+ Add Project"} />
+        <Button>+ Add Project</Button>
       </div>
       <ul></ul>
     </aside>
