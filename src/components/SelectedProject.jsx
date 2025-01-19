@@ -1,8 +1,8 @@
 import React from "react";
 import Button from "./Button";
 
-const SelectedProject = ({ projects }) => {
-  const { title, description, dueDate } = projects;
+const SelectedProject = ({ project }) => {
+  const { title, description, dueDate } = project;
 
   const formatteddate = new Date(dueDate).toLocaleDateString("en-US");
   return (
