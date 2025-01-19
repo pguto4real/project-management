@@ -1,5 +1,6 @@
 import React from "react";
 import Button from "./Button";
+import Tasks from "./Tasks";
 
 const SelectedProject = ({ project,onDelete }) => {
     console.log(project)
@@ -16,7 +17,7 @@ const SelectedProject = ({ project,onDelete }) => {
         <p className="mb-4 text-stone-400">{formatteddate}</p>
         <p className="text-stone-400 whitespace-pre-wrap">{description}</p>
       </header>
-      TASKS
+      <Tasks/>
     </div>
   );
 };
