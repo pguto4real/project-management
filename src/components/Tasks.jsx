@@ -1,7 +1,7 @@
 import React from "react";
 import NewTask from "./NewTask";
 
-const Tasks = ({ addTask, tasks }) => {
+const Tasks = ({ addTask, tasks, deleteTask }) => {
   let taskContent =
     tasks.length > 0 ? (
       <ul className="p-4 mt-8 rounded-md bg-stone-100">
@@ -9,7 +9,10 @@ const Tasks = ({ addTask, tasks }) => {
           return (
             <li key={id} className="flex justify-between my-4">
               <span>{taskTitle}</span>
-              <button className="text-stone-700 hover:text-red-500">
+              <button
+                className="text-stone-700 hover:text-red-500"
+                onClick={() => deleteTask(id)}
+              >
                 Clear
               </button>
             </li>

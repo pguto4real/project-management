@@ -10,7 +10,6 @@ const NewTask = ({ addTask }) => {
   }
 
   function handleAddTask() {
-    console.log(enteredTask + "hdhdhd");
     if (enteredTask.trim() === "") {
       modal.current.open();
       return;

@@ -2,9 +2,8 @@ import React from "react";
 import Button from "./Button";
 import Tasks from "./Tasks";
 
-const SelectedProject = ({ project, onDelete, addTask,tasks }) => {
-  console.log(project);
-  console.log(tasks);
+const SelectedProject = ({ project, onDelete, addTask,onDeleteTask,tasks }) => {
+
   const { title, description, dueDate, id } = project;
 
   const formatteddate = new Date(dueDate).toLocaleDateString("en-US");
@@ -18,7 +17,7 @@ const SelectedProject = ({ project, onDelete, addTask,tasks }) => {
         <p className="mb-4 text-stone-400">{formatteddate}</p>
         <p className="text-stone-400 whitespace-pre-wrap">{description}</p>
       </header>
-      <Tasks addTask={addTask}tasks={tasks}/>
+      <Tasks addTask={addTask} tasks={tasks} deleteTask={onDeleteTask}/>
     </div>
   );
 };
