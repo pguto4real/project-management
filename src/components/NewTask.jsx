@@ -18,6 +18,7 @@ const NewTask = ({ addTask }) => {
       taskTitle: enteredTask,
     };
     addTask(taskData);
+    setEnteredTask('');
   }
   return (
     <>
