@@ -12,20 +12,29 @@ function App() {
   });
 
   function handleAddTaskToProject(taskData, projectId) {
-    console.log(taskData,projectId)
-    // setProjectsState((prevState) => {
-    //   const taskId = tasks[tasks.length - 1] + 1;
-    //   const newTask = {
-    //     ...taskData,
-    //     projectId: projectId,
-    //     id: taskId,
-    //   };
-    //   return {
-    //     ...prevState,
-    //     selectedProjectId: projectId,
-    //     tasks: [...prevState.tasks, newTask],
-    //   };
-    // });
+    console.log(taskData, projectId);
+    console.log(...projectsState.tasks);
+    console.log(Math.max(...projectsState.tasks.map((task) => task.id)) + 1);
+
+    // console.log(taskId);
+    // console.log("Last Task ID:", lastTaskId);
+
+    setProjectsState((prevState) => {
+      const taskId =
+        projectsState.tasks.length > 0
+          ? Math.max(...projectsState.tasks.map((task) => task.id)) + 1
+          : 1;
+      const newTask = {
+        ...taskData,
+        projectId: projectId,
+        id: taskId,
+      };
+      return {
+        ...prevState,
+        selectedProjectId: projectId,
+        tasks: [...prevState.tasks, newTask],
+      };
+    });
   }
   function handleSelectProject(id) {
     setProjectsState((prevState) => {
@@ -84,11 +93,15 @@ function App() {
   const selectedProject = projectsState.projects.find(
     (project) => project.id === projectsState.selectedProjectId
   );
+  const selectedProjectTaskLists = projectsState.tasks.filter(
+    (task) => task.projectId === projectsState.selectedProjectId
+  );
   let content = (
     <SelectedProject
       project={selectedProject}
       onDelete={handleDeleteProject}
       addTask={handleAddTaskToProject}
+      tasks={selectedProjectTaskLists}
     />
   );
   if (projectsState.selectedProjectId === null) {

@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
+import Modal from "./Modal";
 
 const NewTask = ({ addTask, projectId }) => {
-
-      const modal = useRef();
+  const modal = useRef();
   const [enteredTask, setEnteredTask] = useState("");
 
   function handleChange(event) {
@@ -15,6 +15,10 @@ const NewTask = ({ addTask, projectId }) => {
       modal.current.open();
       return;
     }
+    const taskData = {
+      taskTitle: enteredTask,
+    };
+    addTask(taskData, projectId);
   }
   return (
     <>
