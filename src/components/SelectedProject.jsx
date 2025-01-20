@@ -18,7 +18,7 @@ const SelectedProject = ({ project, onDelete, addTask,tasks }) => {
         <p className="mb-4 text-stone-400">{formatteddate}</p>
         <p className="text-stone-400 whitespace-pre-wrap">{description}</p>
       </header>
-      <Tasks addTask={addTask} projectId={id}tasks={tasks}/>
+      <Tasks addTask={addTask}tasks={tasks}/>
     </div>
   );
 };

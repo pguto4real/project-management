@@ -11,14 +11,7 @@ function App() {
     tasks: [],
   });
 
-  function handleAddTaskToProject(taskData, projectId) {
-    console.log(taskData, projectId);
-    console.log(...projectsState.tasks);
-    console.log(Math.max(...projectsState.tasks.map((task) => task.id)) + 1);
-
-    // console.log(taskId);
-    // console.log("Last Task ID:", lastTaskId);
-
+  function handleAddTaskToProject(taskData) {
     setProjectsState((prevState) => {
       const taskId =
         projectsState.tasks.length > 0
@@ -26,12 +19,11 @@ function App() {
           : 1;
       const newTask = {
         ...taskData,
-        projectId: projectId,
+        projectId: prevState.selectedProjectId,
         id: taskId,
       };
       return {
         ...prevState,
-        selectedProjectId: projectId,
         tasks: [...prevState.tasks, newTask],
       };
     });

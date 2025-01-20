@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import Modal from "./Modal";
 
-const NewTask = ({ addTask, projectId }) => {
+const NewTask = ({ addTask }) => {
   const modal = useRef();
   const [enteredTask, setEnteredTask] = useState("");
 
@@ -18,7 +18,7 @@ const NewTask = ({ addTask, projectId }) => {
     const taskData = {
       taskTitle: enteredTask,
     };
-    addTask(taskData, projectId);
+    addTask(taskData);
   }
   return (
     <>
